@@ -1,66 +1,267 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Visit Morocco - خدمات وسياحة</title>
+    <title>Visit Morocco - Authentic Experiences & Affordable Tours</title>
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
-        body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
-        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
-        .logo { font-size: 24px; font-weight: bold; color: #c0392b; }
-        nav ul { display: flex; list-style: none; gap: 20px; }
-        nav ul li a { text-decoration: none; color: #2c3e50; font-weight: 600; }
-        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1200&q=80') center/cover; height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
-        .hero h1 { font-size: 42px; margin-bottom: 15px; }
-        .hero p { font-size: 18px; margin-bottom: 25px; }
-        .btn { padding: 12px 30px; background-color: #e67e22; color: white; text-decoration: none; border-radius: 25px; font-weight: bold; }
-        .services { padding: 60px 8%; text-align: center; }
-        .services h2 { margin-bottom: 40px; color: #2c3e50; }
-        .cards { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
-        .card { background: white; padding: 25px; border-radius: 10px; width: 280px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
-        .card h3 { color: #c0392b; margin-bottom: 10px; }
-        footer { background: #2c3e50; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #fcfcfc; color: #2d3436; line-height: 1.6; }
+        
+        /* Header & Navigation */
+        header { display: flex; justify-content: space-between; align-items: center; padding: 18px 8%; background: #ffffff; box-shadow: 0 4px 12px rgba(0,0,0,0.08); position: sticky; top: 0; z-index: 1000; }
+        .logo { font-size: 24px; font-weight: 800; color: #e67e22; letter-spacing: 0.5px; }
+        .logo span { color: #c0392b; }
+        nav ul { display: flex; list-style: none; gap: 25px; }
+        nav ul li a { text-decoration: none; color: #2c3e50; font-weight: 600; font-size: 15px; transition: 0.3s; }
+        nav ul li a:hover { color: #e67e22; }
+        
+        /* Hero Section */
+        .hero { background: linear-gradient(rgba(0,0,0,0.55), rgba(0,0,0,0.65)), url('https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1400&q=80') center/cover; height: 82vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
+        .hero h1 { font-size: 46px; font-weight: 800; margin-bottom: 15px; text-shadow: 0 2px 4px rgba(0,0,0,0.3); }
+        .hero p { font-size: 19px; max-width: 700px; margin-bottom: 25px; text-shadow: 0 1px 3px rgba(0,0,0,0.4); }
+        .badge { background: #27ae60; color: white; padding: 6px 16px; border-radius: 20px; font-size: 14px; font-weight: bold; margin-bottom: 20px; display: inline-block; }
+        .btn-whatsapp { padding: 14px 32px; background-color: #25d366; color: white; text-decoration: none; border-radius: 30px; font-weight: bold; font-size: 16px; transition: 0.3s; box-shadow: 0 4px 15px rgba(37,211,102,0.4); }
+        .btn-whatsapp:hover { background-color: #1eb857; transform: translateY(-2px); }
+        
+        /* Highlights Banner */
+        .highlights { background: #111; color: white; padding: 25px 8%; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px; text-align: center; }
+        .item h4 { font-size: 20px; color: #f1c40f; margin-bottom: 5px; }
+        .item p { font-size: 14px; color: #bdc3c7; }
+
+        /* Packages / Services Section */
+        .services { padding: 70px 8%; text-align: center; background: #f8f9fa; }
+        .section-title { font-size: 34px; color: #2c3e50; margin-bottom: 10px; font-weight: 700; }
+        .section-desc { color: #7f8c8d; font-size: 16px; margin-bottom: 50px; }
+        .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        
+        .card { background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 6px 18px rgba(0,0,0,0.06); transition: 0.3s; display: flex; flex-direction: column; text-align: left; }
+        .card:hover { transform: translateY(-6px); box-shadow: 0 12px 25px rgba(0,0,0,0.12); }
+        .card-img { height: 200px; background-size: cover; background-position: center; position: relative; }
+        .price-tag { position: absolute; top: 15px; right: 15px; background: #e67e22; color: white; padding: 6px 14px; border-radius: 20px; font-weight: bold; font-size: 14px; }
+        .card-content { padding: 22px; flex-grow: 1; display: flex; flex-direction: column; }
+        .card-content h3 { color: #2c3e50; margin-bottom: 10px; font-size: 20px; }
+        .card-content p { color: #636e72; font-size: 14px; margin-bottom: 18px; flex-grow: 1; }
+        .card-features { list-style: none; margin-bottom: 20px; }
+        .card-features li { font-size: 13px; color: #2d3436; margin-bottom: 6px; display: flex; align-items: center; gap: 8px; }
+        .btn-card { display: block; text-align: center; background: #25d366; color: white; text-decoration: none; padding: 10px; border-radius: 6px; font-weight: 600; font-size: 14px; transition: 0.3s; }
+        .btn-card:hover { background: #1eb857; }
+
+        /* Testimonials / Reviews Section */
+        .reviews { padding: 70px 8%; background: #ffffff; text-align: center; }
+        .reviews-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; margin-top: 40px; }
+        .review-card { background: #fdfdfd; padding: 25px; border-radius: 12px; border: 1px solid #eee; box-shadow: 0 4px 12px rgba(0,0,0,0.03); text-align: left; position: relative; }
+        .review-stars { color: #f1c40f; font-size: 18px; margin-bottom: 12px; }
+        .review-text { font-style: italic; color: #4a5568; font-size: 14px; margin-bottom: 15px; line-height: 1.5; }
+        .review-author { display: flex; align-items: center; gap: 12px; }
+        .review-avatar { width: 42px; height: 42px; border-radius: 50%; background-color: #e67e22; color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 16px; }
+        .author-info h5 { margin: 0; color: #2c3e50; font-size: 15px; }
+        .author-info span { font-size: 12px; color: #a0aec0; }
+
+        /* Why Choose Us */
+        .why-us { padding: 60px 8%; background: #f8f9fa; text-align: center; }
+        .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 25px; margin-top: 40px; }
+        .feature-box { padding: 25px; background: #ffffff; border: 1px solid #eee; border-radius: 8px; }
+        .feature-box h4 { color: #c0392b; font-size: 18px; margin-bottom: 10px; }
+
+        /* Footer */
+        footer { background: #1e272e; color: #d2dae2; text-align: center; padding: 30px 20px; margin-top: 40px; border-top: 4px solid #e67e22; }
+        footer p { font-size: 14px; }
+        .phone-highlight { color: #25d366; font-weight: bold; }
     </style>
 </head>
 <body>
+
+    <!-- Header -->
     <header>
-        <div class="logo">Visit Morocco 🇲🇦</div>
+        <div class="logo">Visit <span>Morocco</span> 🇲🇦</div>
         <nav>
             <ul>
-                <li><a href="#">الرئيسية</a></li>
-                <li><a href="#services">خدماتنا</a></li>
-                <li><a href="#contact">تواصل معنا</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#experiences">Experiences</a></li>
+                <li><a href="#reviews">Reviews</a></li>
+                <li><a href="#why-us">Why Us</a></li>
+                <li><a href="https://wa.me/212787512403">Contact (+212 787-512403)</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
-        <h1>اكتشف سحر المغرب معنا</h1>
-        <p>خدمات سياحية متكاملة، تنظيم رحلات، وجولات إرشادية احترافية</p>
-        <a href="https://wa.me/" class="btn">تواصل معنا عبر واتساب</a>
+        <span class="badge">🔥 Best Price Guarantee in Morocco</span>
+        <h1>Unforgettable Moroccan Adventures</h1>
+        <p>From authentic Marrakech Tajine dining to thrilling Quad Biking, Sahara desert trips, and magical night celebrations — all at unbeatable budget prices!</p>
+        <a href="https://wa.me/212787512403" class="btn-whatsapp">Book Now via WhatsApp</a>
     </section>
 
-    <section class="services" id="services">
-        <h2>خدمات مشروعنا السياحي</h2>
+    <!-- Quick Highlights -->
+    <div class="highlights">
+        <div class="item">
+            <h4>🍲 Authentic Tajine</h4>
+            <p>Traditional Marrakech Flavors</p>
+        </div>
+        <div class="item">
+            <h4>🏎‍🟀 Quad Biking</h4>
+            <p>Desert Dunes & Palm Groves</p>
+        </div>
+        <div class="item">
+            <h4>🐪 Sahara Trips</h4>
+            <p>Overnight Stargazing & Camping</p>
+        </div>
+        <div class="item">
+            <h4>🔥 Night Shows</h4>
+            <p>Live Berber Music & Fireside Dinners</p>
+        </div>
+    </div>
+
+    <!-- Main Packages & Experiences -->
+    <section class="services" id="experiences">
+        <h2 class="section-title">Our Featured Experiences</h2>
+        <p class="section-desc">Handpicked authentic experiences designed for budget travelers seeking maximum adventure.</p>
+
         <div class="cards">
+            <!-- Tajine Dining -->
             <div class="card">
-                <h3>تنظيم الرحلات</h3>
-                <p>برامج سياحية مخصصة للمدن العتيقة والصحراء والجبال.</p>
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1541518763669-27fef04b14e8?auto=format&fit=crop&w=600&q=80');">
+                    <span class="price-tag">From $12</span>
+                </div>
+                <div class="card-content">
+                    <h3>Marrakech Tajine Feast</h3>
+                    <p>Savor authentic homemade lamb, beef, or vegetable Tajines prepared in traditional clay pots in the heart of the Medina.</p>
+                    <ul class="card-features">
+                        <li>✔️ Cooked with organic spices</li>
+                        <li>✔️ Moroccan Mint Tea included</li>
+                        <li>✔️ Rooftop Medina view option</li>
+                    </ul>
+                    <a href="https://wa.me/212787512403" class="btn-card">Reserve a Table</a>
+                </div>
             </div>
+
+            <!-- Quad Biking -->
             <div class="card">
-                <h3>النقل السياحي</h3>
-                <p>توفير سيارات مريحة ونقل من وإلى المطارات.</p>
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80');">
+                    <span class="price-tag">From $25</span>
+                </div>
+                <div class="card-content">
+                    <h3>Quad Biking Adventure</h3>
+                    <p>Ride powerful quad bikes through the rugged desert trails, dusty dunes, and the famous Palmeraie palm groves of Marrakech.</p>
+                    <ul class="card-features">
+                        <li>✔️ Full safety gear & guide provided</li>
+                        <li>✔️ Tea break in a traditional village</li>
+                        <li>✔️ Hotel pickup & drop-off</li>
+                    </ul>
+                    <a href="https://wa.me/212787512403" class="btn-card">Book Quad Tour</a>
+                </div>
             </div>
+
+            <!-- Sahara Desert Tour -->
             <div class="card">
-                <h3>الإرشاد السياحي</h3>
-                <p>جولات مع مرشدين محترفين لاستكشاف المعالم التاريخية.</p>
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?auto=format&fit=crop&w=600&q=80');">
+                    <span class="price-tag">From $45</span>
+                </div>
+                <div class="card-content">
+                    <h3>Sahara Desert Excursion</h3>
+                    <p>Experience camel trekking across golden dunes, stunning sunset views, and an unforgettable night under the starry desert sky.</p>
+                    <ul class="card-features">
+                        <li>✔️ Camel ride & luxury desert camp</li>
+                        <li>✔️ Traditional dinner & breakfast</li>
+                        <li>✔️ Transportation included</li>
+                    </ul>
+                    <a href="https://wa.me/212787512403" class="btn-card">Explore Sahara</a>
+                </div>
+            </div>
+
+            <!-- Night Celebrations -->
+            <div class="card">
+                <div class="card-img" style="background-image: url('https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80');">
+                    <span class="price-tag">From $30</span>
+                </div>
+                <div class="card-content">
+                    <h3>Night Shows & Campfires</h3>
+                    <p>Immerse yourself in Moroccan nightlife with live Gnawa music, Berber drum performances, belly dancers, and campfires.</p>
+                    <ul class="card-features">
+                        <li>✔️ Traditional dinner show</li>
+                        <li>✔️ Live folklore & fire performances</li>
+                        <li>✔️ Magical outdoor atmosphere</li>
+                    </ul>
+                    <a href="https://wa.me/212787512403" class="btn-card">Join Night Show</a>
+                </div>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>جميع الحقوق محفوظة © 2026 - Visit Morocco</p>
+    <!-- Reviews / Testimonials Section -->
+    <section class="reviews" id="reviews">
+        <h2 class="section-title">What Our Travelers Say</h2>
+        <p class="section-desc">Real stories and reviews from travelers who experienced Morocco with us.</p>
+
+        <div class="reviews-grid">
+            <!-- Review 1 -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The Tajine in Marrakech was hands down the best meal of our trip! Incredible organization and super affordable rates."</p>
+                <div class="review-author">
+                    <div class="review-avatar">S</div>
+                    <div class="author-info">
+                        <h5>Sarah L.</h5>
+                        <span>United Kingdom 🇬🇧</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"Quad biking in Palmeraie was thrilling! The guide took amazing photos of us and stopped for tea at a local house. 10/10!"</p>
+                <div class="review-author">
+                    <div class="review-avatar" style="background-color: #2980b9;">M</div>
+                    <div class="author-info">
+                        <h5>Mark & Elena</h5>
+                        <span>Spain 🇪🇸</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="review-card">
+                <div class="review-stars">★★★★★</div>
+                <p class="review-text">"The Sahara night celebration under the stars with live Berber music was purely magical! Best price guaranteed indeed!"</p>
+                <div class="review-author">
+                    <div class="review-avatar" style="background-color: #27ae60;">A</div>
+                    <div class="author-info">
+                        <h5>Antoine D.</h5>
+                        <span>France 🇫🇷</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-us" id="why-us">
+        <h2 class="section-title">Why Travel With Us?</h2>
+        <div class="features-grid">
+            <div class="feature-box">
+                <h4>💰 Unbeatable Prices</h4>
+                <p>We work directly with local guides to guarantee the lowest rates without hidden fees.</p>
+            </div>
+            <div class="feature-box">
+                <h4>🇲🇦 100% Authentic</h4>
+                <p>Enjoy genuine Moroccan hospitality, real home-cooked meals, and rich local culture.</p>
+            </div>
+            <div class="feature-box">
+                <h4>⚡ Instant Booking</h4>
+                <p>Fast reservation directly via WhatsApp with friendly 24/7 customer support.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <p>All Rights Reserved © 2026 - Visit Morocco Tourism Services</p>
+        <p style="margin-top: 8px;">Direct WhatsApp Booking: <span class="phone-highlight">+212 787-512403</span></p>
+        <p style="margin-top: 5px; color: #95a5a6; font-size: 12px;">Providing affordable, top-quality tours across Marrakech, Merzouga, & Zagora.</p>
     </footer>
+
 </body>
-</html>
+</html
