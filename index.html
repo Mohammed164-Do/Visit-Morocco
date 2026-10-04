@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Morocco - خدمات وسياحة</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, sans-serif; }
+        body { background-color: #f8f9fa; color: #333; line-height: 1.6; }
+        header { display: flex; justify-content: space-between; align-items: center; padding: 20px 8%; background: #fff; box-shadow: 0 2px 10px rgba(0,0,0,0.1); position: sticky; top: 0; z-index: 100; }
+        .logo { font-size: 24px; font-weight: bold; color: #c0392b; }
+        nav ul { display: flex; list-style: none; gap: 20px; }
+        nav ul li a { text-decoration: none; color: #2c3e50; font-weight: 600; }
+        .hero { background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1539635278303-d4002c07eae3?auto=format&fit=crop&w=1200&q=80') center/cover; height: 75vh; display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 0 20px; }
+        .hero h1 { font-size: 42px; margin-bottom: 15px; }
+        .hero p { font-size: 18px; margin-bottom: 25px; }
+        .btn { padding: 12px 30px; background-color: #e67e22; color: white; text-decoration: none; border-radius: 25px; font-weight: bold; }
+        .services { padding: 60px 8%; text-align: center; }
+        .services h2 { margin-bottom: 40px; color: #2c3e50; }
+        .cards { display: flex; justify-content: center; gap: 25px; flex-wrap: wrap; }
+        .card { background: white; padding: 25px; border-radius: 10px; width: 280px; box-shadow: 0 4px 10px rgba(0,0,0,0.05); }
+        .card h3 { color: #c0392b; margin-bottom: 10px; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 20px; margin-top: 40px; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">Visit Morocco 🇲🇦</div>
+        <nav>
+            <ul>
+                <li><a href="#">الرئيسية</a></li>
+                <li><a href="#services">خدماتنا</a></li>
+                <li><a href="#contact">تواصل معنا</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>اكتشف سحر المغرب معنا</h1>
+        <p>خدمات سياحية متكاملة، تنظيم رحلات، وجولات إرشادية احترافية</p>
+        <a href="https://wa.me/" class="btn">تواصل معنا عبر واتساب</a>
+    </section>
+
+    <section class="services" id="services">
+        <h2>خدمات مشروعنا السياحي</h2>
+        <div class="cards">
+            <div class="card">
+                <h3>تنظيم الرحلات</h3>
+                <p>برامج سياحية مخصصة للمدن العتيقة والصحراء والجبال.</p>
+            </div>
+            <div class="card">
+                <h3>النقل السياحي</h3>
+                <p>توفير سيارات مريحة ونقل من وإلى المطارات.</p>
+            </div>
+            <div class="card">
+                <h3>الإرشاد السياحي</h3>
+                <p>جولات مع مرشدين محترفين لاستكشاف المعالم التاريخية.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026 - Visit Morocco</p>
+    </footer>
+</body>
+</html>
